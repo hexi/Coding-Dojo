@@ -2,7 +2,7 @@ TESTS = test/*.js
 TIMEOUT = 1000
 
 t:
-	@NODE_ENV=test ./node_modules/mocha/bin/mocha \
+	@NODE_ENV=test ./node_modules/mocha/bin/mocha --compilers js:babel-core/register \
 		--reporter spec \
 		--timeout $(TIMEOUT) \
 		$(MOCHA_OPTS) \
