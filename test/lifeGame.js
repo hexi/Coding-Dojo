@@ -16,7 +16,7 @@ describe('#生命的游戏-细胞', function () {
  });
 
 describe('#生命的游戏-世界', function () {
-		let world
+		let world = null;
 		beforeEach(function(done) {
     	world = new World();
     	done();
@@ -57,11 +57,17 @@ describe('#生命的游戏-世界', function () {
       world.getCell(x, y).isAlive().should.to.be.true;
     });
 
-    it('让指定细胞存活', function () {
+    it('让不在世界范围内的细胞存活', function () {
       world.init(4, 8);
-      let x = 1, y = 1;
-      world.setAliveAt(x, y, true);
-      world.getCell(x, y).isAlive().should.to.be.true;
+      let x = 1, y = 8;
+      try {
+        world.setAliveAt(x, y, true);
+      } catch (e) {
+        console.log(e.message);
+        e.should.to.exist;
+        return;
+      }
+      
     });
 
     it('在细胞(1, 1)周围有8个细胞', function () {
