@@ -1,6 +1,6 @@
 #环境准备
 1. [node.js](nodejs.org)
-*  git clone git@github.com:baidao/Coding-Dojo.git
+*  git clone git@github.com:hexi/Coding-Dojo.git
 *  git checkout -b [NewBranchName]
 *  npm install
 *  make test
@@ -28,10 +28,10 @@
 *  买五本不同的书，25%折扣
 
 #练习-生命游戏
-1. 一個活的格子若只有一個或沒有鄰居, 在下一秒將因寂寞而亡. 
-*  一個活的格子若有四個或四個以上的鄰居, 在下一秒將因拥擠而亡. 
-*  一個活的格子若有二個或三個鄰居, 在下一秒將継續活著. 
-*  一個死的格子若有三個鄰居, 在下一秒將活過來.
+1. 当前细胞为存活状态时，当周围低于2个（不包含2个）存活细胞时， 该细胞变成死亡状态。（模拟生命数量稀少） 
+*  当前细胞为存活状态时，当周围有2个或3个存活细胞时， 该细胞保持原样。 
+*  当前细胞为存活状态时，当周围有3个以上的存活细胞时，该细胞变成死亡状态。（模拟生命数量过多）
+*  当前细胞为死亡状态时，当周围有3个存活细胞时，该细胞变成存活状态。 （模拟繁殖)
 
 #[练习-扑克游戏](http://www.codingdojo.org/cgi-bin/index.pl?KataPokerHands)
 1. High Card: Hands which do not fit any higher category are ranked by the value of their highest card. If the highest cards have the same value, the hands are ranked by the next highest, and so on.
